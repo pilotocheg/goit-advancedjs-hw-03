@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "vite build",
+    "build": "vite build --base=/goit-advancedjs-hw-03/",
     "preview": "vite preview"
   },
   "devDependencies": {
@@ -17,6 +17,7 @@
   "author": "Viacheslav Dmytriiev <slavutich.org@gmail.com>",
   "license": "ISC",
   "dependencies": {
+    "axios": "^1.9.0",
     "izitoast": "^1.4.0",
     "simplelightbox": "^2.14.3",
     "vite-plugin-full-reload": "^1.2.0",

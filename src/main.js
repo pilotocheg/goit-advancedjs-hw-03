@@ -2,7 +2,7 @@ import { fetchImages } from './js/pixabay-api';
 import { clearGallery, renderImages, showLoader } from './js/render-functions';
 import { getSearchQuery, showErrorMessage } from './js/utils';
 
-const form = document.querySelector('.search-form');
+const form = document.querySelector('.form');
 
 function onFormSubmit(event) {
   event.preventDefault();

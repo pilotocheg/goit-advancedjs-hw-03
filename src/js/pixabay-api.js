@@ -1,19 +1,18 @@
+import axios from 'axios';
+
 export function fetchImages(searchQuery) {
-  const query = new URLSearchParams({
-    key: '50578458-599512b8a758686bbac6d0702',
-    q: searchQuery,
-    image_type: 'photo',
-    orientation: 'horizontal',
-    safesearch: true,
-  });
-
-  return fetch(`https://pixabay.com/api/?${query.toString()}`)
-    .then(response => {
-      if (!response.ok) {
-        throw new Error(`Failed to fetch images. Status: ${response.status}`);
-      }
-
-      return response.json();
+  return axios
+    .get('https://pixabay.com/api/', {
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      params: {
+        key: '50578458-599512b8a758686bbac6d0702',
+        q: searchQuery,
+        image_type: 'photo',
+        orientation: 'horizontal',
+        safesearch: true,
+      },
     })
-    .then(data => data.hits);
+    .then(response => response.data.hits);
 }
